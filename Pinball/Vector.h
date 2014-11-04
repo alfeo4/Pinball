@@ -3,10 +3,14 @@
 class Vector
 {
 public:
+    Vector();
+    Vector(double x, double y, double z);
+    
+	double getLength();
+    
 	double x;
 	double y;
 	double z;
-	double getLength();
 };
 
 Vector operator+ (Vector a, Vector b);

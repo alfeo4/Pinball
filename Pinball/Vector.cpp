@@ -3,6 +3,22 @@
 
 #include "Vector.h"
 
+Vector::Vector() : x(0), y(0), z(0)
+{
+}
+
+Vector::Vector(double x, double y, double z) : x(x), y(y), z(z)
+{
+}
+
+double Vector::getLength()
+{
+	double c;
+    c = std::sqrt(x*x + y*y + z*z);
+	return c;
+	
+}
+
 Vector operator+(Vector a, Vector b)
 {
 	Vector r;
@@ -35,14 +51,6 @@ Vector operator*(double d, Vector v)
 Vector operator*(Vector v, double d)
 {
 	return d * v;
-}
-
-double Vector::getLength()
-{
-	double c;
-    c = std::sqrt(x*x + y*y + z*z);
-	return c;
-	
 }
 
 
