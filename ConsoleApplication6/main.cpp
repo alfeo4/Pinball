@@ -11,8 +11,6 @@ int main(int argc, char* argv[])
 	sf::RectangleShape rectangle(sf::Vector2f(600, 400));
 	rectangle.setFillColor(sf::Color::White);
 
-	
-
 	while (window.isOpen())
 	{
 		sf::Event event;
