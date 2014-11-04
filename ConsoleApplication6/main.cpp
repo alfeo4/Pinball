@@ -7,7 +7,6 @@ int main(int argc, char* argv[])
 	circle.setPointCount(500);
 	circle.setFillColor(sf::Color::Green);
 	
-
 	sf::RectangleShape rectangle(sf::Vector2f(600, 400));
 	rectangle.setFillColor(sf::Color::White);
 
