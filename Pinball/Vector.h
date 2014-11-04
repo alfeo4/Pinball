@@ -1,14 +1,16 @@
 #include <iostream>
 
-class vector{
+class Vector
+{
 public:
 	double x;
 	double y;
 	double z;
-	double GetLength();
+	double getLength();
 };
 
-vector operator+ (vector a, vector b);
-vector operator* (double d, vector v);
-vector operator* (vector a, vector b);
-std::ostream& operator<< (std::ostream&, vector vec);
+Vector operator+ (Vector a, Vector b);
+Vector operator- (Vector a, Vector b);
+Vector operator* (double d, Vector v);
+Vector operator* (Vector a, double b);
+std::ostream& operator<< (std::ostream&, Vector vec);

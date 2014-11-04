@@ -1,10 +1,11 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
-#include "vector.h"
+#include "Vector.h"
 
-vector operator+(vector a, vector b) {
-	vector r;
+Vector operator+(Vector a, Vector b)
+{
+	Vector r;
 	r.x = a.x + b.x;
 	r.y = a.y + b.y;
 	r.z = a.z + b.z;
@@ -13,35 +14,39 @@ vector operator+(vector a, vector b) {
 
 
 
-vector operator-(vector a, vector b) {
-	vector r;
+Vector operator-(Vector a, Vector b)
+{
+	Vector r;
 	r.x = a.x - b.x;
 	r.y = a.y - b.y;
 	r.z = a.z - b.z;
 	return r;
 }
 
-vector operator*(double d, vector v) {
-	vector r;
+Vector operator*(double d, Vector v)
+{
+	Vector r;
 	r.x = d * v.x;
 	r.y = d * v.y;
 	r.z = d * v.z;
 	return r;
 }
 
-vector operator*(vector v, double d) {
+Vector operator*(Vector v, double d)
+{
 	return d * v;
 }
 
-double GetLength(vector a) {
+double Vector::getLength()
+{
 	double c;
-	c = sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
+    c = std::sqrt(x*x + y*y + z*z);
 	return c;
 	
 }
 
 
-std::ostream& operator<<(std::ostream& out, vector vec)
+std::ostream& operator<<(std::ostream& out, Vector vec)
 {
 	out << "(" << vec.x << " , " << vec.y << " , " << vec.z << ")";
 	return out;
