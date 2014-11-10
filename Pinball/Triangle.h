@@ -7,6 +7,7 @@
 
 class Triangle
 {
+public:
     //Pass three corners to the triangle to create one
     Triangle(Vector a, Vector b, Vector c);
     

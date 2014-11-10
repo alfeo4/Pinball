@@ -5,6 +5,7 @@
 
 class Ball
 {
+public:
     //Make a ball
     Ball(Vector center, double radius);
     
