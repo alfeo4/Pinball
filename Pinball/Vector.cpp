@@ -58,6 +58,14 @@ double inproduct(Vector a, Vector b)
     return a.x*b.x + a.y*b.y + a.z*b.z;
 }
 
+Vector crossproduct(Vector a, Vector b)
+{
+    Vector result;
+    result.x = a.y*b.z - a.z*b.y;
+    result.y = a.z*b.x - a.x*b.z;
+    result.z = a.x*b.y - a.y*b.x;
+    return result;
+}
 
 std::ostream& operator<<(std::ostream& out, Vector vec)
 {
