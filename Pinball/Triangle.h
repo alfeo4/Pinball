@@ -1,5 +1,5 @@
-#ifndef Triangle_h
-#define Triangle_h
+#ifndef TRIANGLE_H
+#define TRIANGLE_H
 
 #include "Vector.h"
 #include "Ball.h"
@@ -10,6 +10,8 @@ class Triangle
 public:
     //Pass three corners to the triangle to create one
     Triangle(Vector a, Vector b, Vector c);
+    
+    Vector getCorner(size_t index);
     
     //Compute the force contribution of this triangle (is 0 when there is no collision)
     Vector Collide(const Ball& projectile) const;

@@ -1,5 +1,5 @@
-#ifndef Vector_h
-#define Vector_h
+#ifndef VECTOR_H
+#define VECTOR_H
 
 #include <iostream>
 
@@ -9,7 +9,7 @@ public:
     Vector();
     Vector(double x, double y, double z);
     
-	double getLength();
+	double getLength() const;
     
 	double x;
 	double y;

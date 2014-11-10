@@ -11,7 +11,7 @@ Vector::Vector(double x, double y, double z) : x(x), y(y), z(z)
 {
 }
 
-double Vector::getLength()
+double Vector::getLength() const
 {
 	double c;
     c = std::sqrt(x*x + y*y + z*z);
