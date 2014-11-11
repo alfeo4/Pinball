@@ -70,20 +70,24 @@ void PinballTable::render(sf::RenderWindow& window, double scale) const
         for(size_t i=0; i<3; ++i)
         {
             corner = t.getCorner(i);
-            sfCorner.x = scale * corner.x + offset.x;
-            sfCorner.y = - scale * corner.y + offset.y;//let y move up
+            sfCorner.x = scale * corner.z + offset.x;
+            sfCorner.y = - scale * corner.x + offset.y;//let y move up
             sfTriangle.setPoint(i, sfCorner);
         }
         window.draw(sfTriangle);
     }
     
     sf::CircleShape sfBall;
-    sfBall.setPointCount(31);
-    sfBall.setFillColor(sf::Color::Red);
     Vector center = ball.getCenter();
     
-    sfBall.setOrigin(scale * center.x + offset.x, - scale * center.y + offset.y);
-    sfBall.setRadius(scale * ball.getRadius());
+    double radius = scale * ball.getRadius();
+    
+    sfBall.setPosition(scale * center.z + offset.x - radius, -scale * center.x + offset.y - radius);
+    std::cout << center.y << std::endl;
+    
+    sfBall.setRadius(radius);
+    sfBall.setPointCount(31);
+    sfBall.setFillColor(sf::Color::Red);
     
     window.draw(sfBall);
     

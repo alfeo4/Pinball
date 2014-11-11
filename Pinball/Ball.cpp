@@ -1,8 +1,7 @@
 #include "Ball.h"
 
-Ball::Ball(Vector c, double d, Vector v)
+Ball::Ball(Vector c, double d, Vector v) : center(c), radius(d), velocity(v)
 {
-    //TODO do stuff
 }
 
 double Ball::getRadius() const
