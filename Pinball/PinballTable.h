@@ -17,7 +17,7 @@ public:
     PinballTable(std::string Filename);
     
     //compute the normal force the
-    Vector Collide(const Ball& projuctile) const;
+    Vector Collide(const Ball& projectile) const;
     
     //draw the table and the ball
     void render();
