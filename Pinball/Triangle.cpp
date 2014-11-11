@@ -8,3 +8,5 @@ Vector Triangle::getCorner(size_t index)
 {
     return corners[index];
 }
+
+

@@ -10,7 +10,7 @@ class Collide
 {
 public:
 	//Go barycentric
-	Barycentric(Vector a, Vector b, Vector c);
+	//Barycentric(Vector a, Vector b, Vector c);
 
 
 
