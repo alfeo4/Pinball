@@ -63,14 +63,15 @@ void PinballTable::render(sf::RenderWindow& window, double scale) const
     sfTriangle.setFillColor(sf::Color::Green);
     Vector corner;
     sf::Vector2f sfCorner;
+    sf::Vector2u offset = window.getSize();
     
     for(Triangle t:description)
     {
         for(size_t i=0; i<3; ++i)
         {
             corner = t.getCorner(i);
-            sfCorner.x = scale * corner.x;
-            sfCorner.y = scale * corner.y;
+            sfCorner.x = scale * corner.x + offset.x / 2;
+            sfCorner.y = - scale * corner.y + offset.y / 2;//let y move up
             sfTriangle.setPoint(i, sfCorner);
         }
         window.draw(sfTriangle);

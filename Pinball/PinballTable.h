@@ -19,7 +19,7 @@ public:
     Vector Collide(const Ball& projuctile) const;
     
     //draw the table and the ball
-    void render(sf::RenderWindow&, double scale = 100.0) const;
+    void render(sf::RenderWindow&, double scale = 500.0) const;
     
 private:
     std::vector<Triangle> description;
