@@ -1,8 +1,10 @@
-#ifndef PinballTable_h
-#define PinballTable_h
+#ifndef PINBALLTABLE_H
+#define PINBALLTABLE_H
 
 #include <string>
 #include <vector>
+#include <SFML/Graphics.hpp>
+
 #include "Triangle.h"
 #include "Vector.h"
 
@@ -10,17 +12,14 @@ class PinballTable
 {
 public:
     
-    //make up a random 'pinball table' from hand-place triangles
-    PinballTable();
-    
     //read the table description from a blender output file
-    PinballTable(std::string Filename);
+    PinballTable(std::string Filename, const Ball& ball);
     
     //compute the normal force the
     Vector Collide(const Ball& projectile) const;
     
     //draw the table and the ball
-    void render();
+    void render(sf::RenderWindow&, double scale = 100.0) const;
     
 private:
     std::vector<Triangle> description;

@@ -1,3 +1,7 @@
+#include "PinballTable.h"
+#include "Ball.h"
+#include "Vector.h"
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
@@ -12,14 +16,17 @@ int main(int argc, char* argv[])
 	sf::RectangleShape rectangle(sf::Vector2f(600, 400));
 	rectangle.setFillColor(sf::Color::White);
 
-    rectangle.setPosition(20.f, 20.f);
+    Vector ballCenter = {0., 0., 0.};
+    Vector ballSpeed = {0.1, 0.2, 0.3};
+    Ball ball = {ballCenter, 0.1, ballSpeed};
+    PinballTable("test.obj", ball);
 
 	while (window.isOpen())
 	{
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed)
 				window.close();
 		}
 
