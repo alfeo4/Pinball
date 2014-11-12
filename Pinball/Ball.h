@@ -3,6 +3,8 @@
 
 #include "Vector.h"
 
+class PinballTable;
+
 class Ball
 {
 public:
@@ -13,7 +15,7 @@ public:
     double getRadius() const;
     
     //Move a ball a bit
-    void doPhysics();
+    void doPhysics(PinballTable table);
     
 private:
     Vector center;

@@ -7,6 +7,9 @@
 
 #include "Triangle.h"
 #include "Vector.h"
+#include "Ball.h"
+
+class Ball;
 
 class PinballTable
 {
@@ -19,7 +22,7 @@ public:
     Vector Collide(const Ball& projectile) const;
     
     //draw the table and the ball
-    void render(sf::RenderWindow&, double scale = 199.0) const;
+    void render(sf::RenderWindow&, double scale = 199.0);
     
 private:
     std::vector<Triangle> description;

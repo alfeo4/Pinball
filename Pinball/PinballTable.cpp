@@ -57,8 +57,14 @@ PinballTable::PinballTable(std::string filename, const Ball& ball) : ball(ball)
     source.close();
 }
 
-void PinballTable::render(sf::RenderWindow& window, double scale) const
+void PinballTable::render(sf::RenderWindow& window, double scale) 
 {
+    //find a better place for this
+    for(std::size_t i=0;i<2000;i++)
+    {
+        ball.doPhysics(*this);
+    }
+    
     sf::ConvexShape sfTriangle(3);
     sfTriangle.setFillColor(sf::Color::Green);
     Vector corner;
@@ -83,7 +89,7 @@ void PinballTable::render(sf::RenderWindow& window, double scale) const
     double radius = scale * ball.getRadius();
     
     sfBall.setPosition(scale * center.z + offset.x - radius, -scale * center.x + offset.y - radius);
-    std::cout << center.y << std::endl;
+    std::cout << "y: " << center.y << std::endl;
     
     sfBall.setRadius(radius);
     sfBall.setPointCount(31);
@@ -91,4 +97,14 @@ void PinballTable::render(sf::RenderWindow& window, double scale) const
     
     window.draw(sfBall);
     
+}
+
+Vector PinballTable::Collide(const Ball &projectile) const
+{
+    Vector result{0, 0, 0};
+    for(Triangle t:description)
+    {
+        result = result + t.Collide(projectile);
+    }
+    return result;
 }

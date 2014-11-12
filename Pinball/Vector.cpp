@@ -53,6 +53,15 @@ Vector operator*(Vector v, double d)
 	return d * v;
 }
 
+Vector operator/(Vector v, double d)
+{
+    Vector r;
+    r.x = v.x / d;
+    r.y = v.y / d;
+    r.z = v.z / d;
+    return r;
+}
+
 double inproduct(Vector a, Vector b)
 {
     return a.x*b.x + a.y*b.y + a.z*b.z;

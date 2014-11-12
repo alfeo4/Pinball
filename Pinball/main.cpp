@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
     sf::Vector2u uvector;
     sf::Vector2f fvector;
     
-    Vector ballCenter = {0., 0., 0.};
+    Vector ballCenter = {0, 0, 0};
     Vector ballSpeed = {0.1, 0.2, 0.3};
     Ball ball = {ballCenter, 0.1, ballSpeed};
     PinballTable table{"test.obj", ball};
